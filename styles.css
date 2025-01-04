@@ -1,0 +1,72 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#compass-container {
+  margin: 20px 0;
+}
+
+#compass {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  position: relative;
+  transform-origin: center;
+}
+
+.direction {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 30%;
+  background-color: lightgray;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+[data-direction="1"] {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+[data-direction="2"] {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+[data-direction="3"] {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+[data-direction="4"] {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.direction.active {
+  background-color: orange;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+}

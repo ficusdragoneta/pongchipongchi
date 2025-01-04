@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>碰吃碰吃</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div class="container">
+    <h1>碰吃碰吃</h1>
+    <h2>A Singapore Mahjong Helper</h2>
+    <div id="compass-container">
+      <div id="compass">
+        <div class="direction" data-direction="1">东</div>
+        <div class="direction" data-direction="2">南</div>
+        <div class="direction" data-direction="3">西</div>
+        <div class="direction" data-direction="4">北</div>
+      </div>
+      <button id="rotate-button">Rotate Compass</button>
+    </div>
+    <div id="round-wind-container">
+      <h2>Current Round Wind: <span id="current-wind">东</span></h2>
+      <button id="cycle-wind-button">Cycle Wind</button>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
