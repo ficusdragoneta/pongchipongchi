@@ -1,4 +1,4 @@
-/* styles.css */
+/* General Styling */
 body {
   font-family: Arial, sans-serif;
   text-align: center;
@@ -12,30 +12,60 @@ body {
   margin: 0 auto;
 }
 
+/* Compass Container */
 #compass-container {
   margin: 20px 0;
 }
 
+/* Compass */
 #compass {
   width: 200px;
   height: 200px;
   margin: 0 auto;
   position: relative;
-  transform-origin: center;
 }
 
+/* Cross Lines */
+#compass::before,
+#compass::after {
+  content: "";
+  position: absolute;
+  background-color: black; /* Color of the cross lines */
+  z-index: -1; /* Place the lines behind the directions */
+}
+
+/* Vertical Line */
+#compass::before {
+  width: 4px; /* Line thickness */
+  height: 100%; /* Full height of the compass */
+  left: 50%; /* Center it horizontally */
+  transform: translateX(-50%);
+}
+
+/* Horizontal Line */
+#compass::after {
+  width: 100%; /* Full width of the compass */
+  height: 4px; /* Line thickness */
+  top: 50%; /* Center it vertically */
+  left: 0;
+  transform: translateY(-50%);
+}
+
+/* Direction Elements */
 .direction {
   position: absolute;
   width: 50px;
   height: 50px;
   line-height: 50px;
-  border-radius: 30%;
+  border-radius: 30%; /* Round edges for aesthetics */
   background-color: lightgray;
   text-align: center;
   font-weight: bold;
+  font-size: 1em; /* Increase font size */
   cursor: pointer;
 }
 
+/* Positioning Directions */
 [data-direction="1"] {
   top: 0;
   left: 50%;
@@ -60,10 +90,12 @@ body {
   transform: translateY(-50%);
 }
 
+/* Active State for Directions */
 .direction.active {
   background-color: orange;
 }
 
+/* Buttons */
 button {
   padding: 10px 20px;
   font-size: 16px;

@@ -11,7 +11,7 @@ const directionColors = {
   4: "lightgray",
 };
 
-const directions = ["东/1", "北/4", "西/3", "南/2"]; // Order of directions
+const directions = ["东", "北", "西", "南"]; // Order of directions
 let currentOffset = 0; // Tracks rotation offset
 
 // Function to update the compass display
@@ -20,7 +20,7 @@ function updateCompass() {
   compass.forEach((direction, index) => {
     // Determine the new direction based on rotation
     const newDirection = directions[(index + currentOffset) % 4];
-    direction.textContent = newDirection;
+    direction.textContent = newDirection+"/"+winds[windIndex];
     direction.style.backgroundColor = directionColors[newDirection];
   });
 }
@@ -28,9 +28,6 @@ function updateCompass() {
 // Handle direction click to toggle color
 document.querySelectorAll(".direction").forEach((direction) => {
   direction.addEventListener("click", () => {
-
-  	//reset all color
-  	
 
     const currentDirection = direction.textContent;
     // Toggle between lightgray and orange
@@ -66,6 +63,7 @@ document.querySelectorAll('.direction').forEach(direction => {
 document.getElementById('cycle-wind-button').addEventListener('click', () => {
   windIndex = (windIndex + 1) % winds.length;
   document.getElementById('current-wind').textContent = winds[windIndex];
+  updateCompass();
 });
 
 if ('serviceWorker' in navigator) {
